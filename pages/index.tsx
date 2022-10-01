@@ -1,13 +1,13 @@
-import type { NextPage } from 'next'
-import Head from 'next/head'
-import Image from 'next/image'
-import styles from '../styles/Home.module.css'
+import type { NextPage } from "next";
+import Head from "next/head";
+import Image from "next/image";
 
 const Home: NextPage = () => {
   return (
-    <div className='h-full bg-sky-500'>
-    </div>
-  )
-}
+    <>
+      <button className="btn">click</button>
+    </>
+  );
+};
 
-export default Home
+export default Home;

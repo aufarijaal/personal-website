@@ -1,11 +1,18 @@
 /** @type {import('tailwindcss').Config} */
+const colors = require("tailwindcss/colors");
+
 module.exports = {
-  content: [
-    "./pages/**/*.{js,ts,jsx,tsx}",
-    "./components/**/*.{js,ts,jsx,tsx}",
-  ],
+  darkMode: "class",
+  content: ["./pages/**/*.{js,ts,jsx,tsx}", "./components/**/*.{js,ts,jsx,tsx}"],
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        dark: colors.gray["900"],
+      },
+    },
   },
-  plugins: [],
-}
+  plugins: [require("@tailwindcss/typography"), require("daisyui")],
+  daisyui: {
+    themes: ["dark"],
+  },
+};
