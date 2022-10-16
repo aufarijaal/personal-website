@@ -5,10 +5,14 @@ import Skills from "../components/Skills";
 import Projects from "../components/Projects";
 import Contact from "../components/Contact";
 import { motion } from "framer-motion";
+import Head from "next/head";
 
 const Home: NextPage = () => {
   return (
     <>
+      <Head>
+        <title>Aufa Rijal</title>
+      </Head>
       <Landing />
       <Skills />
       <Projects />
