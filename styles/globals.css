@@ -2,8 +2,54 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer base {
+  html,
+  body {
+    scroll-behavior: smooth;
+  }
+  #__next {
+    @apply bg-light;
+  }
+}
+@layer components {
+  .nav-item {
+    @apply transition hover:bg-primary/20 h-7 px-3 rounded text-center text-secondary cursor-pointer;
+  }
+  .form-item-group {
+    @apply flex flex-wrap gap-5 justify-center;
+  }
+  .form-item {
+    @apply flex flex-col gap-3;
+  }
+  .form-input {
+    @apply bg-light border-2 rounded-md border-primary/20 outline-none p-2 focus:border-primary transition;
+  }
+  .btn-repo-demo-link {
+    @apply bg-primary text-light flex gap-3 w-max h-max sm:py-2 sm:px-3.5 p-3 cursor-pointer rounded-full;
+  }
+}
 html,
 body,
-__next {
+#__next {
+  font-family: Inter, sans-serif;
   height: 100%;
+}
+/* custom scrollbar */
+::-webkit-scrollbar {
+  width: 18px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: rgb(49 132 112);
+  border-radius: 20px;
+  border: 6px solid transparent;
+  background-clip: content-box;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: rgb(49 132 112);
 }

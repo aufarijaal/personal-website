@@ -1,53 +1,44 @@
-import React from "react";
+/* eslint-disable react/jsx-no-undef */
+import React, { useState } from "react";
+import { Icon } from "@iconify/react";
+import NavbarCollapse from "./NavbarCollapse";
 
 const Navbar = () => {
+  const [showNav, setShowNav] = useState(false);
   return (
-    <div className="navbar bg-base-100 shadow fixed top-0 left-0">
-      <div className="flex-1">
-        <a className="btn btn-ghost normal-case text-xl">A.</a>
-      </div>
-      <div className="flex-none hidden sm:flex">
-        <ul className="menu menu-horizontal p-0">
-          <li>
-            <a>Home</a>
-          </li>
-          <li>
-            <a>About</a>
-          </li>
-          <li>
-            <a>Projects</a>
-          </li>
-          <li>
-            <a>Contact</a>
-          </li>
-        </ul>
-      </div>
-      <div className="w-full flex justify-center fixed bottom-2">
-        <ul className="menu menu-horizontal bg-base-100 shadow-md">
-          <li>
-            <a>
-              <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
-              </svg>
-            </a>
-          </li>
-          <li>
-            <a>
-              <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-              </svg>
-            </a>
-          </li>
-          <li>
-            <a>
-              <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
-              </svg>
-            </a>
-          </li>
-        </ul>
-      </div>
-    </div>
+    <>
+      <nav className="fixed w-full top-0 left-0 z-10 h-16 flex justify-between items-center px-8 shadow-md shadow-primary/10 backdrop-blur bg-light/50">
+        <div className="nav-logo cursor-pointer select-none text-secondary" style={{ fontFamily: "Berkshire Swash", fontSize: "28px" }}>
+          <a>a.</a>
+        </div>
+        <div className="nav-items hidden gap-5 items-center font-bold sm:flex">
+          <a className="nav-item" href="#landing">
+            Home
+          </a>
+          <a className="nav-item" href="#about">
+            About
+          </a>
+          <a className="nav-item" href="#skills">
+            Skills
+          </a>
+          <a className="nav-item" href="#projects">
+            Projects
+          </a>
+          <a className="nav-item" href="#contact">
+            Contact
+          </a>
+        </div>
+        <div
+          className="nav-hamburger flex sm:hidden items-center cursor-pointer hover:bg-primary/20 rounded-full p-2 transition"
+          onClick={() => {
+            setShowNav(true);
+          }}
+        >
+          <Icon icon="akar-icons:three-line-horizontal" width="24" height="24" style={{ color: "#14372F" }}></Icon>
+        </div>
+        <NavbarCollapse onClose={() => setShowNav(false)} visible={showNav} />
+      </nav>
+    </>
   );
 };
 

@@ -2,7 +2,7 @@
   "extends": "next/core-web-vitals",
   "rules": {
     "semi": "error",
-    "quotes": "error",
+    "quotes": "off",
     "space-in-parens": "warn",
     "eqeqeq": "warn"
   }
