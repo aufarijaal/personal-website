@@ -58,7 +58,7 @@ const Contact = () => {
             <textarea name="contact_message" id="contact-message" className="form-input"></textarea>
           </div>
           <div className="flex justify-center">
-            <button onClick={handleContactSubmit} type="button" className="bg-primary w-max px-3 py-2 rounded-md text-light">
+            <button onClick={handleContactSubmit} type="button" className="cursor-pointer w-max h-max py-2 px-4 gap-2 bg-primary rounded-full flex items-center justify-center shadow-primary/10 shadow-lg text-light">
               Send Message
             </button>
           </div>

@@ -1,6 +1,7 @@
 import React from "react";
 import Tippy from "@tippyjs/react";
 import Image from "next/image";
+import { Icon } from "@iconify/react";
 
 interface Props {
   src: string;
@@ -11,9 +12,10 @@ interface Props {
   name: string;
   viewType: "grid" | "list";
   skillLevel: "Beginner" | "Intermediate" | "Advanced" | "Professional" | "Master";
+  icon: string;
 }
 
-const SkillsItem: React.FC<Props> = ({ src, alt, layout, width, height, name, viewType, skillLevel }) => {
+const SkillsItem: React.FC<Props> = ({ src, alt, layout, width, height, name, viewType, skillLevel, icon }) => {
   {
     return viewType === "grid" ? (
       <Tippy content={name}>
@@ -25,6 +27,9 @@ const SkillsItem: React.FC<Props> = ({ src, alt, layout, width, height, name, vi
       </Tippy>
     ) : (
       <div className="flex gap-3 items-center">
+        <div className="bg-light w-8 h-8 rounded-full flex justify-center items-center p-2">
+          <Icon icon={icon} color="#318470" width={24} height={24} />
+        </div>
         <span className="font-bold text-light">{name}</span>
         <span className="text-xs px-2 py-0.5 text-primary bg-light ">{skillLevel}</span>
       </div>
