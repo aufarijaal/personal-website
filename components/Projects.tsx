@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { Icon } from "@iconify/react";
 import Image from "next/image";
 import ProjectDrawer from "./ProjectDrawer";
 import myprojects from "./myprojects";
@@ -19,7 +18,7 @@ const Projects = () => {
       <div className="text-center font-bold text-2xl text-primary">PROJECTS</div>
       <div className="projects-container flex gap-10 justify-center">
         <div className="projects-gallery flex lg:flex-row flex-col gap-10 justify-start lg:p-5 items-center lg:h-72 h-max overflow-x-auto lg:w-3/4 w-[95%]">
-          {myprojects.map((project, index, array) => {
+          {myprojects.map((project, index) => {
             return (
               <div key={index} className="lg:h-full h-[400px] min-w-[300px] rounded-lg relative group">
                 <div className="absolute top-[40%] left-[50%] -translate-x-[50%] -translate-y-[50%] z-10 hidden group-hover:flex flex-col gap-3 justify-center items-center">

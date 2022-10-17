@@ -3,7 +3,7 @@ import "tippy.js/dist/tippy.css";
 import "keyboard-css/dist/css/main.min.css";
 import type { AppProps } from "next/app";
 import Layout from "../components/Layout";
-import { useState, useCallback, useEffect } from "react";
+import { useCallback, useEffect } from "react";
 
 function MyApp({ Component, pageProps }: AppProps) {
   const handleUserKeyPress = useCallback((event: { key: string }) => {

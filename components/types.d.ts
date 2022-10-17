@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 interface IProject {
   title: string;
   description: string;
