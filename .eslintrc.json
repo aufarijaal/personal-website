@@ -4,6 +4,7 @@
     "semi": "error",
     "quotes": "off",
     "space-in-parens": "warn",
-    "eqeqeq": "warn"
+    "eqeqeq": "warn",
+    "no-unused-vars": "error"
   }
 }

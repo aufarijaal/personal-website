@@ -26,31 +26,41 @@ const NavbarCollapse: React.FC<Props> = ({ visible, onClose }) => {
             duration: 0.5,
           }}
           id="nav-collapse"
-          className={visible ? "flex absolute top-0 left-0 bg-light w-full h-screen z-20 flex-col justify-center items-center gap-5" : "hidden"}
+          className={visible ? "flex fixed bg-light w-screen h-screen z-20 flex-col justify-center items-center gap-5" : "hidden"}
         >
           <ActiveLink href="#landing">
             <a className="nav-item" onClick={onClose}>
-              Home
+              <div className="font-bold font-mono">
+                ~/<span className="text-primary">Home</span>
+              </div>
             </a>
           </ActiveLink>
           <ActiveLink href="#about">
             <a className="nav-item" onClick={onClose}>
-              About
+              <div className="font-bold font-mono">
+                ~/<span className="text-primary">About</span>
+              </div>
             </a>
           </ActiveLink>
           <ActiveLink href="#skills">
             <a className="nav-item" onClick={onClose}>
-              Skills
+              <div className="font-bold font-mono">
+                ~/<span className="text-primary">Skills</span>
+              </div>
             </a>
           </ActiveLink>
           <ActiveLink href="#projects">
             <a className="nav-item" onClick={onClose}>
-              Projects
+              <div className="font-bold font-mono">
+                ~/<span className="text-primary">Projects</span>
+              </div>
             </a>
           </ActiveLink>
           <ActiveLink href="#contact">
             <a className="nav-item" onClick={onClose}>
-              Contact
+              <div className="font-bold font-mono">
+                ~/<span className="text-primary">Contact</span>
+              </div>
             </a>
           </ActiveLink>
           <div id="close-nav-collapse" className="mt-20 hover:bg-primary/20 rounded-full p-3 transition cursor-pointer" onClick={onClose}>

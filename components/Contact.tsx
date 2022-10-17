@@ -1,5 +1,6 @@
 import { Icon } from "@iconify/react";
 import React, { useState } from "react";
+import { AnimatePresence, motion } from "framer-motion";
 
 const Contact = () => {
   const [showLoading, setshowLoading] = useState(false);
@@ -9,12 +10,23 @@ const Contact = () => {
   };
   return (
     <section id="contact" className="h-max py-20 bg-light flex flex-col gap-10 relative">
-      {showLoading ? (
-        <div className="loading-overlay absolute bg-black/40 h-full w-full flex justify-center items-center top-0">
-          <Icon icon="eos-icons:loading" width={48} height={48} color="#ffffff" />
-        </div>
-      ) : (
-        ""
+      {showLoading && (
+        <AnimatePresence>
+          <motion.div
+            initial={{
+              opacity: 0,
+            }}
+            animate={{
+              opacity: 1,
+            }}
+            exit={{
+              opacity: 0,
+            }}
+            className="loading-overlay absolute bg-black/40 h-full w-full flex justify-center items-center top-0"
+          >
+            <Icon icon="eos-icons:loading" width={48} height={48} color="#ffffff" />
+          </motion.div>
+        </AnimatePresence>
       )}
       <div className="text-center font-bold text-2xl text-primary">Contact me</div>
       <div className="contact-container flex justify-center">

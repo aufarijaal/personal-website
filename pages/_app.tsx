@@ -9,7 +9,7 @@ function MyApp({ Component, pageProps }: AppProps) {
   const handleUserKeyPress = useCallback((event: { key: string }) => {
     const { key } = event;
 
-    if (key === "h") {
+    if (key === "l") {
       window.location.href = "#landing";
     } else if (key === "a") {
       window.location.href = "#about";
