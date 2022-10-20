@@ -2,11 +2,10 @@
 import React, { useEffect, useState } from "react";
 import { Icon } from "@iconify/react";
 import NavbarCollapse from "./NavbarCollapse";
-import { AnimatePresence, motion } from "framer-motion";
 
 const Navbar = () => {
   const [showNav, setShowNav] = useState(false);
-  const [showSelectLang, setshowSelectLang] = useState(false);
+  // const [showSelectLang, setshowSelectLang] = useState(false);
   const [theme, setTheme] = useState("dark");
 
   useEffect(() => {
