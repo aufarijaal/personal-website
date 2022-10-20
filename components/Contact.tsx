@@ -6,7 +6,7 @@ const Contact = () => {
     <section id="contact" className="h-max py-20 bg-light dark:bg-dark flex flex-col gap-10 relative">
       <div className="text-center font-bold text-2xl text-primary">CONTACT</div>
       <div className="contact-container flex justify-center">
-        <a href="mailto:rijalaufa0@gmail.com" target="_blank" className="bg-primary flex items-center justify-center px-2 py-3 hover:scale-105 active:scale-95 transition-transform" rel="noreferrer">
+        <a href="mailto:rijalaufa0@gmail.com" target="_blank" className="flex items-center justify-center px-2 py-3 hover:scale-105 active:scale-95 transition-all shadow-primary/60 hover:shadow-primary/30 shadow-lg hover:shadow-sm bg-gradient-to-br from-indigo-400 to-indigo-600" rel="noreferrer">
           <span className="text-light font-extrabold">
             <span className="font-normal">Email me at </span> rijalaufa0@gmail.com
           </span>

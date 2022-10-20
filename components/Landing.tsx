@@ -32,7 +32,7 @@ const Landing = () => {
             </a>
           </div>
           <div>
-            <a href="/cv/Muhammad Aufa Rijal CV.pdf" target="_blank" className="social-links cursor-pointer w-max h-max py-2 px-4 gap-2 bg-primary rounded-full flex items-center justify-center shadow-primary/10 shadow-lg">
+            <a href="/cv/Muhammad Aufa Rijal CV.pdf" target="_blank" className="social-links cursor-pointer w-max h-max py-2 px-4 gap-2 bg-gradient-to-br from-indigo-400 to-indigo-600 rounded-full flex items-center justify-center shadow-primary/60 hover:shadow-primary/30 transition-shadow shadow-lg">
               <Icon icon="akar-icons:download" color="white" width="24" height="24" />
               <div className="text-light">My Resume</div>
             </a>

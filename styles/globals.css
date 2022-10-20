@@ -30,6 +30,9 @@
   .btn-repo-demo-link {
     @apply bg-primary text-light flex gap-3 w-max h-max sm:py-2 sm:px-3.5 p-3 cursor-pointer rounded-full;
   }
+  .trivia-item {
+    @apply flex gap-5 sm:text-xl flex-col sm:flex-row items-center pb-5 sm:pb-0 sm:border-0 border-b border-zinc-700 text-center sm:text-start text-base;
+  }
 }
 html,
 body,

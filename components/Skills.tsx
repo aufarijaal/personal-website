@@ -1,9 +1,27 @@
-import React, { useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import SkillsItem from "./SkillsItem";
 import { Icon } from "@iconify/react";
+import Typed from "typed.js";
 
 const Skills = () => {
   const [viewType, setViewType] = useState<"list" | "grid">("list");
+  const typedNoob = useRef<any>("");
+
+  useEffect(() => {
+    const typed = new Typed(typedNoob.current, {
+      strings: ["Express JS", "Svelte", "Docker", "ASP .NET"],
+      startDelay: 300,
+      typeSpeed: 100,
+      backSpeed: 100,
+      backDelay: 1000,
+      loop: true,
+    });
+
+    // Destropying
+    return () => {
+      typed.destroy();
+    };
+  }, []);
   return (
     <section id="skills" className="h-max py-20 bg-light dark:bg-dark flex flex-col gap-10">
       <div className="text-center font-bold text-2xl text-primary flex flex-col justify-center items-center gap-3">
@@ -31,6 +49,9 @@ const Skills = () => {
         <SkillsItem icon="file-icons:c" skillLevel="Intermediate" viewType={viewType} name="C#" width={130} height={156} src="/csharp-130x156.png" alt="csharp logo" />
         <SkillsItem icon="bxl:firebase" skillLevel="Intermediate" viewType={viewType} name="Firebase" width={156} height={156} src="/firebase-156x156.png" alt="firebase logo" />
         <SkillsItem icon="cib:next-js" skillLevel="Intermediate" viewType={viewType} name="Next JS" width={146} height={86} src="/next-146x86.png" alt="next logo" />
+      </div>
+      <div className="text-center text-sm text-gray-500">
+        Why <span ref={typedNoob} className="bg-primary text-light px-2 py-1"></span> doesn&apos;t exist? because I&apos;m still noob with that
       </div>
     </section>
   );
