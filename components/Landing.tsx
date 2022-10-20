@@ -3,13 +3,16 @@ import React from "react";
 const Landing = () => {
   return (
     <>
-      <section id="landing" className="h-max md:py-32 py-24 flex flex-col lg:gap-20 gap-10">
+      <section id="landing" className="h-max md:py-32 py-24 flex flex-col lg:gap-20 gap-10 dark:bg-dark bg-light">
         <div id="hero" className="md:text-5xl sm:text-4xl text-3xl font-extrabold flex flex-col items-center gap-2 text-center">
-          <div className="text-secondary">
+          <div className="text-secondary dark:text-light">
             Hi, I&apos;m <span className="text-primary">Aufa</span>
           </div>
-          <div className="text-secondary">A Front-End Web Developer</div>
-          <div className="text-sm font-normal text-gray-500 tracking-wide mt-5 px-5 lg:px-36">
+          <div className="text-secondary dark:text-light">A Front-End Web Developer</div>
+          <div className="text-sm font-semibold text-gray-500 my-5 flex gap-5 items-center">
+            Tegal City, Central Java, Indonesia <Icon icon="emojione:flag-for-indonesia" width="24" height="24" className="shadow-lg dark:shadow-none rounded-full" />
+          </div>
+          <div className="text-sm font-normal text-gray-500 dark:text-gray-200 tracking-wide px-5 lg:px-36">
             I&apos;m a front-end web developer specializing in building user interfaces using popular frameworks like <span className="font-bold">React</span> and <span className="font-bold">Vue</span> and occasionally designing with figma. Currently, I&apos;m focused on building responsive front-end web applications while <span className="font-bold">learning back-end technologies.</span>
           </div>
         </div>

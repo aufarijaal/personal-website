@@ -14,8 +14,8 @@ const Projects = () => {
     repoLink: "",
   });
   return (
-    <section id="projects" className="h-max py-10 bg-light flex flex-col gap-10">
-      <div className="text-center font-bold text-2xl text-primary">PROJECTS</div>
+    <section id="projects" className="h-max py-10 bg-light dark:bg-dark flex flex-col gap-10">
+      <div className="text-center font-bold text-2xl text-primary self-center">PROJECTS</div>
       <div className="projects-container flex gap-10 justify-center">
         <div className="projects-gallery flex lg:flex-row flex-col gap-10 justify-start lg:p-5 items-center lg:h-72 h-max overflow-x-auto lg:w-3/4 w-[95%]">
           {myprojects.map((project, index) => {

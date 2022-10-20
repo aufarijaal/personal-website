@@ -2,18 +2,21 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+  --color-primary: #6366f1;
+  --color-secondary: #312e81;
+  --color-light: white;
+  --color-dark: #18181b;
+}
 @layer base {
   html,
   body {
     scroll-behavior: smooth;
   }
-  #__next {
-    @apply bg-light;
-  }
 }
 @layer components {
   .nav-item {
-    @apply transition hover:bg-primary/20 px-3 sm:h-16 h-8 text-center text-secondary cursor-pointer flex gap-2 justify-center items-center;
+    @apply transition hover:bg-primary/20 px-3 sm:h-16 h-8 text-center text-secondary dark:text-light cursor-pointer flex gap-2 justify-center items-center;
   }
   .form-item-group {
     @apply flex flex-wrap gap-5 justify-center;
@@ -35,21 +38,24 @@ body,
   height: 100%;
 }
 /* custom scrollbar */
-::-webkit-scrollbar {
+*::-webkit-scrollbar {
   width: 18px;
 }
 
-::-webkit-scrollbar-track {
-  background-color: transparent;
+html.no-touch.dark body::-webkit-scrollbar-track {
+  background-color: var(--color-dark);
+}
+html.no-touch body::-webkit-scrollbar-track {
+  background-color: var(--color-light);
 }
 
-::-webkit-scrollbar-thumb {
-  background-color: rgb(49 132 112);
+*::-webkit-scrollbar-thumb {
+  background-color: var(--color-primary);
   border-radius: 20px;
   border: 6px solid transparent;
   background-clip: content-box;
 }
 
-::-webkit-scrollbar-thumb:hover {
-  background-color: rgb(49 132 112);
+*::-webkit-scrollbar-thumb:hover {
+  background-color: var(--color-primary);
 }

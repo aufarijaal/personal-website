@@ -1,22 +1,25 @@
 import type { NextPage } from "next";
 import Landing from "../components/Landing";
-import About from "../components/About";
 import Skills from "../components/Skills";
 import Projects from "../components/Projects";
 import Contact from "../components/Contact";
 import { motion } from "framer-motion";
 import Head from "next/head";
+import { useEffect } from "react";
 
 const Home: NextPage = () => {
+  useEffect(() => {
+    localStorage.setItem("theme", "dark");
+  }, []);
+
   return (
     <>
       <Head>
         <title>Aufa Rijal</title>
       </Head>
       <Landing />
-      <Skills />
       <Projects />
-      <About />
+      <Skills />
       <Contact />
       <a id="back-to-top" className="bg-primary w-full h-12 flex justify-center items-center gap-3" href="#landing">
         <motion.svg

@@ -1,4 +1,5 @@
 /** @type {import('tailwindcss').Config} */
+const colors = require("tailwindcss/colors");
 
 module.exports = {
   darkMode: "class",
@@ -6,9 +7,10 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        primary: "#318470",
-        secondary: "#14372F",
-        light: "#F4F4F4",
+        primary: colors.indigo["500"],
+        secondary: colors.indigo["900"],
+        light: colors.white,
+        dark: colors.zinc["900"],
       },
     },
   },

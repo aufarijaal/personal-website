@@ -17,21 +17,25 @@ const ProjectDrawer: React.FC<Props> = ({ project, show, onClose }: Props) => {
           initial={{
             opacity: 0,
             y: 1000,
+            scale: 0,
           }}
           animate={{
             opacity: 1,
             y: 0,
+            scale: 1,
           }}
           exit={{
             opacity: 0,
             y: 1000,
+            scale: 0,
           }}
           transition={{
-            duration: 0.5,
+            duration: 1,
+            type: "spring",
           }}
-          className="project-detail-drawer-backdrop fixed bottom-0 left-0 custom-animate-slide-up bg-black/10 w-full h-screen outline-none overflow-hidden z-50 flex justify-center items-center"
+          className="project-detail-drawer-backdrop fixed bottom-0 left-0 custom-animate-slide-up bg-black/50 w-full h-screen outline-none overflow-hidden z-50 flex justify-center items-center"
         >
-          <motion.div className="bg-light sm:w-[98%] sm:h-[96%] w-full h-full sm:rounded-xl grid grid-rows-[60%_40%]">
+          <motion.div className="bg-light dark:bg-dark sm:w-[98%] sm:h-[96%] w-full h-full sm:rounded-xl grid grid-rows-[60%_40%] dark:sm:border-primary dark:sm:border-2 border-0">
             <div className="rounded-t-xl relative">
               <Image src={project.images[0]} className="sm:rounded-t-xl brightness-[30%]" alt="project image" layout="fill" objectFit="cover" />
               <div className="absolute z-10 w-full h-full flex flex-col justify-between">
@@ -55,13 +59,13 @@ const ProjectDrawer: React.FC<Props> = ({ project, show, onClose }: Props) => {
                 </div>
               </div>
             </div>
-            <div className="rounded-b-xl bg-light grid grid-rows-[1fr_1fr] overflow-y-auto sm:overflow-hidden sm:grid-rows-1 sm:grid-cols-[auto_200px]">
-              <p id="project-detail-description" className="text-sm p-3  text-justify border-b border-r-0 border-gray-500 sm:border-b-0 sm:border-r sm:overflow-y-auto">
+            <div className="rounded-b-xl bg-light dark:bg-dark grid grid-rows-[1fr_1fr] overflow-y-auto sm:overflow-hidden sm:grid-rows-1 sm:grid-cols-[auto_200px]">
+              <p id="project-detail-description" className="dark:text-light text-black text-sm p-3 text-justify border-b border-r-0 dark:border-gray-600 border-gray-500 sm:border-b-0 sm:border-r sm:overflow-y-auto">
                 {project.description}
               </p>
               <div id="project-detail-techs" className="text-sm p-3 sm:overflow-y-auto">
                 <div className="font-bold text-center mb-4 text-primary">TECHNOLOGIES</div>
-                <div className="flex flex-col gap-3 items-center">
+                <div className="flex flex-col gap-3 items-center text-black dark:text-light">
                   {project.techs.map((each, index) => {
                     return <div key={index}>{each}</div>;
                   })}

@@ -5,14 +5,14 @@ import { Icon } from "@iconify/react";
 const Skills = () => {
   const [viewType, setViewType] = useState<"list" | "grid">("list");
   return (
-    <section id="skills" className="h-max py-20 bg-primary flex flex-col gap-10">
-      <div className="text-center font-bold text-2xl text-light flex flex-col justify-center items-center gap-3">
-        <div>SKILLS</div>
-        <div className="flex bg-primary border-2 border-light p-1 gap-2 w-max">
-          <div onClick={() => setViewType("grid")} className={viewType === "grid" ? "cursor-pointer flex justify-center items-center w-7 h-7 bg-light" : "cursor-pointer flex justify-center items-center w-7 h-7 bg-primary"}>
+    <section id="skills" className="h-max py-20 bg-light dark:bg-dark flex flex-col gap-10">
+      <div className="text-center font-bold text-2xl text-primary flex flex-col justify-center items-center gap-3">
+        <div className="text-center font-bold text-2xl text-primary">SKILLS</div>
+        <div className="flex bg-primary p-1 gap-2 w-max">
+          <div onClick={() => setViewType("grid")} className={viewType === "grid" ? "cursor-pointer flex justify-center items-center w-7 h-7 bg-light" : "cursor-pointer flex justify-center items-center w-7 h-7"}>
             <Icon icon="clarity:grid-view-line" color={viewType === "grid" ? "#318470" : "#F4F4F4"} />
           </div>
-          <div onClick={() => setViewType("list")} className={viewType === "list" ? "cursor-pointer flex justify-center items-center w-7 h-7 bg-light" : "cursor-pointer flex justify-center items-center w-7 h-7 bg-primary"}>
+          <div onClick={() => setViewType("list")} className={viewType === "list" ? "cursor-pointer flex justify-center items-center w-7 h-7 bg-light" : "cursor-pointer flex justify-center items-center w-7 h-7"}>
             <Icon icon="clarity:view-list-line" color={viewType === "list" ? "#318470" : "#F4F4F4"} />
           </div>
         </div>

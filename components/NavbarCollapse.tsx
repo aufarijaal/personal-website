@@ -1,7 +1,7 @@
 import { Icon } from "@iconify/react";
 import { AnimatePresence, motion } from "framer-motion";
 import React, { EventHandler } from "react";
-import ActiveLink from "./ActiveLink";
+import Link from "next/link";
 
 interface Props {
   visible: boolean;
@@ -26,45 +26,30 @@ const NavbarCollapse: React.FC<Props> = ({ visible, onClose }) => {
             duration: 0.5,
           }}
           id="nav-collapse"
-          className={visible ? "flex fixed bg-light w-screen h-screen z-20 flex-col justify-center items-center gap-5" : "hidden"}
+          className={visible ? "flex fixed bg-light dark:bg-dark w-screen h-screen z-20 flex-col justify-center items-center gap-5" : "hidden"}
         >
-          <ActiveLink href="#landing">
-            <a className="nav-item" onClick={onClose}>
-              <div className="font-bold font-mono">
-                ~/<span className="text-primary">Home</span>
-              </div>
-            </a>
-          </ActiveLink>
-          <ActiveLink href="#about">
-            <a className="nav-item" onClick={onClose}>
-              <div className="font-bold font-mono">
-                ~/<span className="text-primary">About</span>
-              </div>
-            </a>
-          </ActiveLink>
-          <ActiveLink href="#skills">
-            <a className="nav-item" onClick={onClose}>
-              <div className="font-bold font-mono">
-                ~/<span className="text-primary">Skills</span>
-              </div>
-            </a>
-          </ActiveLink>
-          <ActiveLink href="#projects">
-            <a className="nav-item" onClick={onClose}>
-              <div className="font-bold font-mono">
-                ~/<span className="text-primary">Projects</span>
-              </div>
-            </a>
-          </ActiveLink>
-          <ActiveLink href="#contact">
-            <a className="nav-item" onClick={onClose}>
-              <div className="font-bold font-mono">
-                ~/<span className="text-primary">Contact</span>
-              </div>
-            </a>
-          </ActiveLink>
+          <Link href="#landing" className="nav-item" onClick={onClose}>
+            <div className="font-bold font-mono dark:text-primary">
+              ~/<span className="text-primary dark:text-light">Home</span>
+            </div>
+          </Link>
+          <Link href="#skills" className="nav-item" onClick={onClose}>
+            <div className="font-bold font-mono dark:text-primary">
+              ~/<span className="text-primary dark:text-light">Skills</span>
+            </div>
+          </Link>
+          <Link href="#projects" className="nav-item" onClick={onClose}>
+            <div className="font-bold font-mono dark:text-primary">
+              ~/<span className="text-primary dark:text-light">Projects</span>
+            </div>
+          </Link>
+          <Link href="#contact" className="nav-item" onClick={onClose}>
+            <div className="font-bold font-mono dark:text-primary">
+              ~/<span className="text-primary dark:text-light">Contact</span>
+            </div>
+          </Link>
           <div id="close-nav-collapse" className="mt-20 hover:bg-primary/20 rounded-full p-3 transition cursor-pointer" onClick={onClose}>
-            <Icon icon="akar-icons:cross" style={{ color: "#14372F" }} width="24" height="24"></Icon>
+            <Icon icon="akar-icons:cross" style={{ color: "var(--color-primary)" }} width="24" height="24"></Icon>
           </div>
         </motion.div>
       )}

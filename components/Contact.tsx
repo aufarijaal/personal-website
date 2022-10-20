@@ -1,36 +1,18 @@
 import { Icon } from "@iconify/react";
-import React, { useState } from "react";
-import { AnimatePresence, motion } from "framer-motion";
+import React from "react";
 
 const Contact = () => {
-  const [showLoading, setshowLoading] = useState(false);
-  const handleContactSubmit = () => {
-    setshowLoading(true);
-    setTimeout(() => setshowLoading(false), 3000);
-  };
   return (
-    <section id="contact" className="h-max py-20 bg-light flex flex-col gap-10 relative">
-      {showLoading && (
-        <AnimatePresence>
-          <motion.div
-            initial={{
-              opacity: 0,
-            }}
-            animate={{
-              opacity: 1,
-            }}
-            exit={{
-              opacity: 0,
-            }}
-            className="loading-overlay absolute bg-black/40 h-full w-full flex justify-center items-center top-0"
-          >
-            <Icon icon="eos-icons:loading" width={48} height={48} color="#ffffff" />
-          </motion.div>
-        </AnimatePresence>
-      )}
-      <div className="text-center font-bold text-2xl text-primary">Contact me</div>
+    <section id="contact" className="h-max py-20 bg-light dark:bg-dark flex flex-col gap-10 relative">
+      <div className="text-center font-bold text-2xl text-primary">CONTACT</div>
       <div className="contact-container flex justify-center">
-        <form action="" method="post" className="px-4 flex flex-col gap-5">
+        <a href="mailto:rijalaufa0@gmail.com" target="_blank" className="bg-primary flex items-center justify-center px-2 py-3 hover:scale-105 active:scale-95 transition-transform" rel="noreferrer">
+          <span className="text-light font-extrabold">
+            <span className="font-normal">Email me at </span> rijalaufa0@gmail.com
+          </span>
+          <Icon className="cursor-pointer" icon="bx:link-external" width="24" height="24" color="#F4F4F4" />
+        </a>
+        {/* <form action="" method="post" className="px-4 flex flex-col gap-5">
           <div className="form-item-group">
             <div className="form-item">
               <label className="text-primary" htmlFor="contact-name">
@@ -62,7 +44,7 @@ const Contact = () => {
               Send Message
             </button>
           </div>
-        </form>
+        </form> */}
       </div>
     </section>
   );
