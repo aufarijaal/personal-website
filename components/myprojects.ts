@@ -26,6 +26,24 @@ const projects: IProject[] = [
     demoLink: "https://pbct.my.id",
     repoLink: "https://github.com/aufarijaal/sistem-papbct",
   },
+  {
+    title: "Electron Quick Start Element Plus",
+    description: "Opinionated electron quick start with included features such as Vue JS and Element Plus as Front End, Logging using winston js, SQL Builder using Knex with default user table scaffolding (SQLite), Pinia, Typescript, Vite, Context Isolation, etc. This template built for creating app that works offline by default",
+    techs: ["Vue JS", "Electron", "Pinia", "Typescript", "Element Plus", "Winston", "Knex JS", "SQLite", "Vite"],
+    images: ["/project-previews/efqs-element-plus/region_1366x738_2022_10_21-20_42_35_228.png"],
+    videoPreview: "",
+    demoLink: "",
+    repoLink: "https://github.com/aufarijaal/electron-fullstack-quick-start",
+  },
+  {
+    title: "Electron Quick Start Vuestic",
+    description: "Opinionated electron quick start with included features such as Vue JS and Vuestic as Front End, Logging using winston js, SQL Builder using Knex with default user table scaffolding (SQLite), Pinia, Typescript, Vite, Context Isolation, etc. This template built for creating app that works offline by default",
+    techs: ["Vue JS", "Electron", "Pinia", "Typescript", "Vuestic", "Winston", "Knex JS", "SQLite", "Vite"],
+    images: ["/project-previews/efqs-vuestic/region_1366x738_2022_10_21-20_43_39_617.png"],
+    videoPreview: "",
+    demoLink: "",
+    repoLink: "https://github.com/aufarijaal/electron-fullstack-quick-start-vuestic",
+  },
 ];
 
 export default projects;

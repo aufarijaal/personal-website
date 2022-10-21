@@ -9,9 +9,9 @@ const Landing = () => {
             Hi, I&apos;m <span className="text-primary">Aufa</span>
           </div>
           <div className="text-secondary dark:text-light">A Front-End Web Developer</div>
-          <div className="text-sm font-semibold text-gray-500 my-5 flex gap-5 items-center">
+          {/* <div className="text-sm font-semibold text-gray-500 my-5 flex gap-5 items-center">
             Tegal City, Central Java, Indonesia <Icon icon="emojione:flag-for-indonesia" width="24" height="24" className="shadow-lg dark:shadow-none rounded-full" />
-          </div>
+          </div> */}
           <div className="text-sm font-normal text-gray-500 dark:text-gray-200 tracking-wide px-5 lg:px-36">
             I&apos;m a front-end web developer specializing in building user interfaces using popular frameworks like <span className="font-bold">React</span> and <span className="font-bold">Vue</span> and occasionally designing with figma. Currently, I&apos;m focused on building responsive front-end web applications while <span className="font-bold">learning back-end technologies.</span>
           </div>
