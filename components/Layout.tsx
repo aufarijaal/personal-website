@@ -9,7 +9,7 @@ const Layout: React.FC<Props> = ({ children }) => {
   return (
     <>
       <Navbar />
-      <main className="bg-light">{children}</main>
+      <main className="bg-light dark:bg-dark">{children}</main>
     </>
   );
 };
