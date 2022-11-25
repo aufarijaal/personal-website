@@ -4,11 +4,16 @@ import { Icon } from "@iconify/react";
 import NavbarCollapse from "./NavbarCollapse";
 import Trivia from "./Trivia";
 import { AnimatePresence, motion } from "framer-motion";
-const Navbar = () => {
+
+interface Props {
+  showTrivia: boolean;
+  closeTrivia: CallableFunction;
+}
+
+const Navbar: React.FC<Props> = ({ showTrivia, closeTrivia }) => {
   const [showNav, setShowNav] = useState(false);
   // const [showSelectLang, setshowSelectLang] = useState(false);
   const [theme, setTheme] = useState("dark");
-  const [showTrivia, setshowTrivia] = useState(false);
   const [showMenuTrivia, setshowMenuTrivia] = useState(false);
   useEffect(() => {
     theme === "dark" ? document.documentElement.classList.add("dark") : document.documentElement.classList.remove("dark");
@@ -56,7 +61,9 @@ const Navbar = () => {
                   duration: 0.3,
                 }}
                 className="nav-item"
-                onClick={() => setshowTrivia(true)}
+                onClick={() => {
+                  window.dispatchEvent(new KeyboardEvent("keydown", { key: "t" }));
+                }}
               >
                 <div className="text-sm font-mono text-primary">~/Trivia</div>
                 <kbd className="kbc-button kbc-button-xxs">t</kbd>
@@ -100,6 +107,7 @@ const Navbar = () => {
             {theme === "dark" ? <Icon icon="clarity:moon-solid" width="24" height="24" color="var(--color-primary)" /> : <Icon icon="clarity:sun-solid" width="24" height="24" color="var(--color-primary)" />}
           </div>
         </div>
+
         <div className="nav-hamburger flex gap-2 md:hidden items-center cursor-pointer hover:bg-primary/20 rounded-full p-3 transition text-primary font-semibold border-2 border-primary">
           <div
             onClick={() => {
@@ -115,11 +123,11 @@ const Navbar = () => {
           </div>
         </div>
       </nav>
-      <Trivia show={showTrivia} onClose={() => setshowTrivia(false)} />
+      <Trivia show={showTrivia} onClose={closeTrivia} />
       <NavbarCollapse
         handleTrivia={() => {
           setShowNav(false);
-          setshowTrivia(true);
+          closeTrivia();
         }}
         onClose={() => setShowNav(false)}
         visible={showNav}

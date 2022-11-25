@@ -3,12 +3,12 @@ import "tippy.js/dist/tippy.css";
 import "keyboard-css/dist/css/main.min.css";
 import type { AppProps } from "next/app";
 import Layout from "../components/Layout";
-import { useCallback, useEffect } from "react";
+import { useCallback, useEffect, useState } from "react";
 
 function MyApp({ Component, pageProps }: AppProps) {
+  const [showTrivia, setShowTrivia] = useState(false);
   const handleUserKeyPress = useCallback((event: { key: string }) => {
     const { key } = event;
-
     if (key === "l") {
       window.location.href = "#landing";
     } else if (key === "a") {
@@ -19,6 +19,8 @@ function MyApp({ Component, pageProps }: AppProps) {
       window.location.href = "#projects";
     } else if (key === "c") {
       window.location.href = "#contact";
+    } else if (key === "t") {
+      setShowTrivia(true);
     }
   }, []);
 
@@ -29,8 +31,9 @@ function MyApp({ Component, pageProps }: AppProps) {
       window.removeEventListener("keydown", handleUserKeyPress);
     };
   }, [handleUserKeyPress]);
+
   return (
-    <Layout>
+    <Layout showTrivia={showTrivia} closeTrivia={() => setShowTrivia(false)}>
       <Component {...pageProps} />
     </Layout>
   );
