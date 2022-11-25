@@ -15,7 +15,7 @@ const Navbar = () => {
   }, [theme, setTheme]);
   return (
     <>
-      <nav className="fixed w-max md:w-full rounded-full md:rounded-none md:top-0 md:left-0 bottom-10 right-10 md:border-none z-10 h-max md:py-0 md:h-16 flex md:justify-between justify-center items-center px-0 md:px-8 backdrop-blur bg-light/50 dark:bg-dark/50 overflow-x-auto overflow-y-hidden">
+      <nav className="fixed w-max md:w-full rounded-full md:rounded-none md:top-0 md:left-0 bottom-10 right-10 md:border-none z-10 h-max md:py-0 md:h-16 flex justify-center lg:justify-between items-center px-0 lg:px-8 backdrop-blur bg-light/50 dark:bg-dark/50 overflow-x-auto overflow-y-hidden">
         {/* <div className="bg-primary h-1 absolute top-0 left-0" style={{ width: scroll }}></div> */}
         <div className="nav-logo cursor-pointer select-none text-secondary dark:text-primary hidden lg:block font-bold" style={{ fontFamily: "Berkshire Swash", fontSize: "28px" }}>
           <a>a.</a>
